@@ -15,6 +15,23 @@ function App(props) {
     }
   }
 
+  const renderTitle = () => {
+    if (data.apiData) {
+      return (
+      <h2>
+        {data.apiData.title}
+        <h5>
+          by <i>{data.apiData.artistDisplayName}</i>
+           </h5>
+      </h2>
+      )
+    } else {
+      <h2>Loading...</h2>
+    }
+  }
+
+  
+
   useEffect(() => {
     dispatch(fetchData())
   }, [props.objectId, dispatch])
@@ -33,6 +50,7 @@ function App(props) {
       }} />
       <div>
         {data.objectId}
+        {renderTitle()}
         {renderImg()}
       </div>
     </div>
