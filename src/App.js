@@ -58,6 +58,6 @@ function App(props) {
 }
 
 
-const mapStateToProps = (state, ownProps) => ({ objectId: state.data.objectId })
+const mapStateToProps = (state) => ({ objectId: state.data.objectId })
 
 export default connect(mapStateToProps)(App);
